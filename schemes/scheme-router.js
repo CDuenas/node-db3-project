@@ -2,7 +2,9 @@ const express = require('express');
 
 const Schemes = require('./scheme-model.js');
 
-const router = express.Router();
+const router = express.Router({
+  mergeParams: true,
+});
 
 router.get('/', (req, res) => {
   Schemes.find()
